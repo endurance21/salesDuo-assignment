@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react';
+import React,{useState, useEffect,useRef} from 'react';
 import 'antd/dist/antd.css';
 import './App.css';
 import { Layout, Menu, Breadcrumb ,Row ,Col} from 'antd';
@@ -24,32 +24,56 @@ import {
 } from "react-router-dom";
 import HeaderMain from "./components/header"
 import Dashboard from "./components/dashboard"
-
+import Loader from "./components/Loader"
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
-const App =()=>{
+const App =(props)=>{
+ const [loading,setloading] = useState(true)
    const [collapsed,setCollapsed] =  useState(false)
    const [theme,setTheme] =  useState("light")
+   const [width, setWidth] = useState(0);
+  const ref = useRef();
+
+  useEffect(() => {
+      window.setTimeout(()=>{
+        setloading(false)
+
+      },2000)
+    let style = getComputedStyle(document.querySelector("body"));
+    setWidth(parseInt(style.width));
+    window.addEventListener("resize", () => {
+        let style = getComputedStyle(document.querySelector("body"));
+        setWidth(parseInt(style.width));
+    });
+
+  }, []);
 
   const onCollapse = collapsed => {
     setCollapsed(collapsed)
   };
 
-
+if(loading){
+  return <Loader></Loader>
+}
     return (
-      <Layout style={{ minHeight: '100vh' }}>
-            <Router>
+      <Router>
+
+      <Layout style={{ minHeight: '100vh' }} ref={ref}>
 
             <Sider
           theme={theme}
           collapsible
           collapsed={collapsed}
           onCollapse={onCollapse}
+          className="sider-main"
+          width={width > 600 ? "300px" : "200px"}
         >
-          <div className="logo" />
+          <div className={!collapsed?"logo":"logo-collapsed"} >
+            Artemis
+            </div>
           <Row  className="headliners">
-          Main
+          <div style={{fontSize:`${collapsed? ".6rem" : "1rem"}`}}> Main </div>
           </Row>
           <Menu theme={theme} defaultSelectedKeys={["1"]} mode="inline">
             <Menu.Item key="1" icon={<PieChartOutlined />}>
@@ -80,7 +104,7 @@ const App =()=>{
               <Menu.Item key="11">Page2</Menu.Item>
             </SubMenu>
       <Row className="headliners">
-      Secondary
+        <div style={{fontSize:`${collapsed? ".6rem" : "1rem"}`}}> Secondary </div>
         </Row>
 
             <Menu.Item key="12" icon={<QuestionCircleOutlined />}>
@@ -104,7 +128,7 @@ const App =()=>{
           </Menu>
         </Sider>
         <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }} >
+          <Header className="site-layout-background header-wrapper" style={{ padding: 0 }} >
             <HeaderMain></HeaderMain>
             </Header>
           <Content style={{ margin: '0 16px' }}>
@@ -113,7 +137,7 @@ const App =()=>{
 
 
                   <Switch>
-                    <Route exact path="/dashboard">
+                    <Route  path="/">
                       <Dashboard>
 
                       </Dashboard>
@@ -123,11 +147,12 @@ const App =()=>{
 
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+
         </Layout>
-        </Router>
 
       </Layout>
+      </Router>
+
     );
 }
 

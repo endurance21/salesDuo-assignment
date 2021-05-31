@@ -58,7 +58,7 @@ const BadgeC = ({ value }) => {
   );
 };
 const Totalincome = () => {
-  const { countUp } = useCountUp({ end: 100, duration: 4, decimals: 2 });
+  const { countUp } = useCountUp({ end: 80, duration: 4, decimals: 2 });
 
   const menu = (
     <Menu>
@@ -103,22 +103,29 @@ const Balance = () => {
   const [width, setWidth] = useState(0);
   const ref = useRef();
   useEffect(() => {
-    let style = getComputedStyle(ref.current);
-    setWidth(parseInt(style.width));
-    window.addEventListener("resize", () => {
-        let style = getComputedStyle(ref.current);
+        let style = getComputedStyle(document.querySelector("body"));
         setWidth(parseInt(style.width));
+
+    window.addEventListener("resize", () => {
+            let style = getComputedStyle(document.querySelector("body"));
+            setWidth(parseInt(style.width));
+
     });
-    // window.resizeTo(0,0)
-    // window.dispatchEvent(new Event('resize'));
+
   }, []);
   const data = [
     {
       name: "Page A",
       uv: 4000,
       pv: 2400,
-      amt: 2400,
+      amt: 240,
     },
+    {
+        name: "Page A",
+        uv: 4000,
+        pv: 2400,
+        amt: 2400,
+      },
     {
       name: "Page B",
       uv: 3000,
@@ -155,6 +162,30 @@ const Balance = () => {
       pv: 4300,
       amt: 2100,
     },
+    {
+        name: "Page D",
+        uv: 2780,
+        pv: 3908,
+        amt: 2000,
+      },
+      {
+        name: "Page E",
+        uv: 1890,
+        pv: 4800,
+        amt: 2181,
+      },
+      {
+        name: "Page F",
+        uv: 2390,
+        pv: 3800,
+        amt: 2500,
+      },
+      {
+        name: "Page G",
+        uv: 3490,
+        pv: 4300,
+        amt: 2100,
+      },
   ];
 
   const menu = (
@@ -171,13 +202,13 @@ const Balance = () => {
     </Menu>
   );
   const formatValue1 = (value) => (
-    <div style={{ fontSize: width * 0.05 + "px" }} className="bold">
+    <div  className="bold balance-head">
       {" "}
       {Number(value).toFixed(2)} %{" "}
     </div>
   );
   const formatValue2 = (value) => (
-    <div style={{ fontSize: width * 0.05 + "px" }} className="bold">
+    <div  className="bold balance-head">
       {" "}
       ${Number(value).toFixed(2)}{" "}
     </div>
@@ -189,7 +220,7 @@ const Balance = () => {
         backgroundColor: "white",
         borderRadius: "3px",
       }}
-      className="box-shadow"
+      className="box-shadow balance-wrapper"
     >
       <Row
         style={{ borderBottom: ".5px solid  rgba(0,0,0,0.1)", padding: "10px" }}
@@ -266,15 +297,7 @@ const Balance = () => {
 
 const NewUser = () => {
   const { countUp } = useCountUp({ end: 90, duration: 4, decimals: 2 });
-  const [width, setWidth] = useState(0);
-  const ref = useRef();
-  useEffect(() => {
-    window.dispatchEvent(new Event('resize'));
-    setWidth(ref.current.getBoundingClientRect().width);
-    window.addEventListener("resize", () => {
-      setWidth(ref.current.getBoundingClientRect().width);
-    });
-  }, []);
+
   const data = [
     {
       name: "Page A",
@@ -332,7 +355,6 @@ const NewUser = () => {
       <Menu.Item key="3">3rd menu item</Menu.Item>
     </Menu>
   );
-  console.log("width",width)
   return (
     <div className="w-100 total-income-wrapper  box-shadow">
       <Row className="heading color-shade">
@@ -354,7 +376,7 @@ const NewUser = () => {
         <BadgeC value={6.6} />
       </Row>
 
-      <Row className="color-shade" ref={ref}>
+      <Row className="color-shade" >
           <ResponsiveContainer height={100} width="100%">
 
         <BarChart
@@ -551,10 +573,11 @@ const Transactions = () => {
           </ExportTableButton>
         </Col>
       </Row>
-      <Row className="transaction-tab">
+      <Row className="transaction-tab" style={{marginTop:"25px"}}>
         <Tabs defaultActiveKey="1">
           <TabPane tab="Incoming " key="1">
             <Table
+               className="table-main"
               rowSelection={rowSelection}
               rowClassName={(record, index) =>
                 index % 2 === 0 ? "table-row-light" : "table-row-dark"
@@ -583,7 +606,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <Row>
-        <Col xs={12}>
+        <Col xs={24} lg={12}>
           <Row>
             <Totalincome></Totalincome>
           </Row>
@@ -591,7 +614,7 @@ const Dashboard = () => {
             <NewUser></NewUser>
           </Row>
         </Col>
-        <Col xs={12}>
+        <Col xs={24} lg={12}>
           <Balance></Balance>
         </Col>
       </Row>

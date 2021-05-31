@@ -7,7 +7,7 @@
     background-color: #fff;
   }
 .recent-transaction{
-    font-size: calc(1vw + .4rem);
+    font-size: calc(1vw + .8rem);
 }
 .ant-tabs-nav{
     padding:10px

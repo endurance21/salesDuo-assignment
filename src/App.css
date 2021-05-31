@@ -28,7 +28,7 @@
 
 }
 .dashboard{
-  padding: 20px 14% ;
+  padding: 20px 16% 0px 10% ;
   background: #f0f2f5;
 }
 .transaction-wrapper{
@@ -51,6 +51,9 @@
 }
 .income-dollar{
   font-size: calc(2vw + .1rem)
+}
+.balance-head{
+  font-size: calc(1vw + .5rem)
 }
 .w-100
 {
@@ -77,3 +80,147 @@
 .bold{
   font-weight: 900;
 }
+.center{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.h-100{
+  height: 100%;
+}
+.header-wrapper{
+  display: block
+}
+.anticon-right,.anticon-left{
+  display: inline-block;
+  width: 60%;
+  color:white;
+  background:#0693E3 ;
+  padding:10px 20px
+}
+.ant-menu-item-selected{
+  color:white;
+  background:#0693E3 !important
+}
+.ant-menu-submenu-active >div{
+  color:white !important;
+  background:#0693E3 !important
+}
+.ant-menu-submenu-active >div > i{
+  color:white !important;
+  background:#0693E3 !important
+}
+
+.ant-menu-item-selected a, .ant-menu-item-selected a{
+  color:white !important
+}
+.ant-menu-item:hover {
+  color:initial !important
+}
+.ant-menu-item-active{
+  color:white !important
+}
+.ant-menu{
+  padding-left:10px;
+  padding-right:5px
+}
+.sider-main{
+  width: 15%;
+}
+.logo{
+
+  font-size: calc(1vw + .2rem);
+  font-weight: 900;
+
+}
+.logo-collapsed{
+
+  font-size: 20px;
+  font-weight: 900;
+  padding:5px;
+
+}
+.table-main{
+  min-width: 400px;
+  overflow: scroll;
+}
+.ant-tabs-nav{
+  margin:0 !important
+}
+
+@media only screen and (max-width: 768px) {
+  .logo-collapsed{
+
+    font-size: calc(1vw + .5rem);
+    font-weight: 900;
+
+  }
+  .balance-head{
+    font-size: calc(3vw + .2rem)
+  }
+  .header-wrapper{
+    display: none
+  }
+  .dashboard{
+    padding: 20px 2px ;
+    background: #f0f2f5;
+  }
+  .site-layout-background{
+    padding:0px !important
+  }
+  .income-dollar{
+    font-size: calc(2vw + 1rem)
+  }
+  .sider-main{
+    width: 90%;
+  }
+
+  .logo{
+
+    font-size: calc(2vw + 2rem);
+    font-weight: 900;
+
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .dashboard{
+    padding: 20px 2px ;
+  }
+  .logo{
+
+    font-size: calc(1.5vw + .6rem);
+    font-weight: 900;
+
+  }
+
+}
+@media only screen and (max-width: 1300px) {
+
+  .balance-wrapper{
+    margin: 2px !important;
+  }
+  .ant-btn {
+    padding: 5px !important;
+  }
+  .recent-transaction{
+    font-size: calc(2vw + 1rem) !important;
+}
+.sider-main{
+  width: 20%;
+}
+}
+
+
+
+
+
+
+
+.loader{
+  height: 100vh;
+  background:#000000;
+}
+
+
+
+

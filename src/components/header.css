@@ -1,16 +1,19 @@
 .headerIcon {
-    padding: 10px;
     color: gray;
+    margin-left: 1.1rem;
   }
   .searchBarIcon {
-    padding: 10px;
-    padding-left: 2rem;
+    color: gray;
+
+  }
+  .search-icon{
     color: gray;
   }
   .searchBarInput {
-    height: 30px;
     border: none;
-    margin-left: 10px;
-    padding: 10px;
     color: gray;
+  }
+
+  .ant-layout-header {
+      line-height: normal !important;
   }
