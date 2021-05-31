@@ -577,6 +577,7 @@ const Transactions = () => {
         <Tabs defaultActiveKey="1">
           <TabPane tab="Incoming " key="1">
             <Table
+            pagination={false}
                className="table-main"
               rowSelection={rowSelection}
               rowClassName={(record, index) =>

@@ -31,7 +31,7 @@ const { SubMenu } = Menu;
 const App =(props)=>{
  const [loading,setloading] = useState(true)
    const [collapsed,setCollapsed] =  useState(false)
-   const [theme,setTheme] =  useState("light")
+   const [theme,setTheme] =  useState("dark")
    const [width, setWidth] = useState(0);
   const ref = useRef();
 
@@ -62,18 +62,20 @@ if(loading){
       <Layout style={{ minHeight: '100vh' }} ref={ref}>
 
             <Sider
+            breakpoint="md"
           theme={theme}
           collapsible
           collapsed={collapsed}
           onCollapse={onCollapse}
           className="sider-main"
+          collapsedWidth={0}
           width={width > 600 ? "300px" : "200px"}
         >
-          <div className={!collapsed?"logo":"logo-collapsed"} >
+          <div className={!collapsed?"logo":"logo-collapsed"} style={{color:"white",paddingLeft:"10px"}}>
             Artemis
             </div>
           <Row  className="headliners">
-          <div style={{fontSize:`${collapsed? ".6rem" : "1rem"}`}}> Main </div>
+          <div style={{fontSize:`${collapsed? ".6rem" : "1rem"}`,color:`${theme=="dark"?"white":"black"}`}}> Main </div>
           </Row>
           <Menu theme={theme} defaultSelectedKeys={["1"]} mode="inline">
             <Menu.Item key="1" icon={<PieChartOutlined />}>
@@ -104,7 +106,7 @@ if(loading){
               <Menu.Item key="11">Page2</Menu.Item>
             </SubMenu>
       <Row className="headliners">
-        <div style={{fontSize:`${collapsed? ".6rem" : "1rem"}`}}> Secondary </div>
+        <div style={{fontSize:`${collapsed? ".6rem" : "1rem"}`,color:`${theme=="dark"?"white":"black"}`}}> Secondary </div>
         </Row>
 
             <Menu.Item key="12" icon={<QuestionCircleOutlined />}>
@@ -127,11 +129,11 @@ if(loading){
             </Menu.Item>
           </Menu>
         </Sider>
-        <Layout className="site-layout">
+        <Layout className="site-layout" theme={theme}>
           <Header className="site-layout-background header-wrapper" style={{ padding: 0 }} >
             <HeaderMain></HeaderMain>
             </Header>
-          <Content style={{ margin: '0 16px' }}>
+          <Content style={{ margin: '0 16px' }} theme={theme}>
 
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360,backgroundColor:"#f0f2f5" }}>
 

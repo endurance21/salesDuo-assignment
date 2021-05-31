@@ -149,6 +149,17 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .ant-layout-sider{
+    position: fixed;
+    height: 100vh;
+    z-index: 1000
+  }
+  .ant-layout-sider-zero-width-trigger{
+    top:0px
+  }
+  .ant-layout .site-layout{
+ margin-top:42px;
+  }
   .logo-collapsed{
 
     font-size: calc(1vw + .5rem);
@@ -181,6 +192,9 @@
     font-weight: 900;
 
   }
+}
+.transaction-wrapper {
+  margin-top:20px
 }
 @media only screen and (max-width: 1200px) {
   .dashboard{
