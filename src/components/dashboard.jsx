@@ -560,10 +560,10 @@ const Transactions = () => {
   return (
     <div className="transaction-wrapper box-shadow" style={{ width: "100%" }}>
       <Row style={{padding:"10px"}}>
-        <Col xs={20} className="recent-transaction">
+        <Col md={20} xs={12} className="recent-transaction">
             Recent Transactions
         </Col>
-        <Col xs={4} style={{ textAlign: "end" }}>
+        <Col md={4} xs={12} style={{ textAlign: "end" }}>
           <ExportTableButton
             dataSource={rowData}
             columns={columnsData}
