@@ -10,3 +10,69 @@
   [data-theme="dark"] .site-layout .site-layout-background {
     background: #141414;
   }
+
+
+.ant-tabs-top{
+  width: 100% !important;
+
+}
+.headliners{
+  padding: 15px;
+
+}
+.table-row-light {
+  background-color: #ffffff;
+}
+.table-row-dark {
+  background-color: #fbfbfb;
+
+}
+.dashboard{
+  padding: 20px 14% ;
+  background: #f0f2f5;;
+}
+.transaction-wrapper{
+  background: white;
+  padding: 10px;
+}
+.ant-table-tbody > tr > td ,.ant-table-thead > tr > th  {
+  border:none !important
+}
+.progress {
+  background-color: rgb(62, 122, 235);
+  height: 10px;
+  border-radius: 1rem;
+  transition: 1s ease;
+  transition-delay: 0.5s;
+}
+.progress-div {
+  background-color: rgb(233, 233, 233);
+  border-radius: .5rem;
+}
+.income-dollar{
+  font-size: calc(2vw + .1rem)
+}
+.w-100
+{
+  width:100%
+}
+.color-shade{
+  color:#969696
+}
+.total-income-wrapper{
+  background: white;
+  padding:10px;
+  border-radius: 3px;
+  /* box-shadow: 2px   rgba(0, 0, 0, 0.2), 2px rgba(0, 0, 0, 0.19); */
+}
+.box-shadow{
+  box-shadow: "5px 8px 24px 5px rgba(208, 216, 243, 0.6)"
+
+}
+.badge-text{
+  display: flex;
+  align-items: center;
+}
+.bold{
+  font-weight: 900;
+}
