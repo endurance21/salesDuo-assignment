@@ -1,7 +1,7 @@
 import React,{useState, useEffect,useRef} from 'react';
 import 'antd/dist/antd.css';
 import './App.css';
-import { Layout, Menu, Breadcrumb ,Row ,Col} from 'antd';
+import { Layout, Menu, Breadcrumb ,Row ,Col,Switch as Switchs} from 'antd';
 import {
   DesktopOutlined,
   PieChartOutlined,
@@ -31,7 +31,7 @@ const { SubMenu } = Menu;
 const App =(props)=>{
  const [loading,setloading] = useState(true)
    const [collapsed,setCollapsed] =  useState(false)
-   const [theme,setTheme] =  useState("dark")
+   const [theme,setTheme] =  useState("light")
    const [width, setWidth] = useState(0);
   const ref = useRef();
 
@@ -39,7 +39,7 @@ const App =(props)=>{
       window.setTimeout(()=>{
         setloading(false)
 
-      },2000)
+      },3500)
     let style = getComputedStyle(document.querySelector("body"));
     setWidth(parseInt(style.width));
     window.addEventListener("resize", () => {
@@ -71,7 +71,7 @@ if(loading){
           collapsedWidth={0}
           width={width > 600 ? "300px" : "200px"}
         >
-          <div className={!collapsed?"logo":"logo-collapsed"} style={{color:"white",paddingLeft:"10px"}}>
+          <div className={!collapsed?"logo":"logo-collapsed"} style={{color:`${theme=="dark"?"white":"black"}`,paddingLeft:"10px"}}>
             Artemis
             </div>
           <Row  className="headliners">
@@ -109,16 +109,16 @@ if(loading){
         <div style={{fontSize:`${collapsed? ".6rem" : "1rem"}`,color:`${theme=="dark"?"white":"black"}`}}> Secondary </div>
         </Row>
 
-            <Menu.Item key="12" icon={<QuestionCircleOutlined />}>
+            <Menu.Item key="12" icon={<QuestionCircleOutlined  />}>
               Support Center
             </Menu.Item>
-            <Menu.Item key="13" icon={<InboxOutlined />}>
+            <Menu.Item key="13" icon={<InboxOutlined  />} className="vanish-on-mobile">
               Inbox
             </Menu.Item>
-            <Menu.Item key="14" icon={<FolderOpenOutlined />}>
+            <Menu.Item key="14" icon={<FolderOpenOutlined />} className="vanish-on-mobile" >
               File manager
             </Menu.Item>
-            <Menu.Item key="15" icon={<BarsOutlined />}>
+            <Menu.Item key="15" icon={<BarsOutlined />} className="vanish-on-mobile">
               Data List
             </Menu.Item>
             <Menu.Item key="16" icon={<SettingOutlined />}>
@@ -128,6 +128,15 @@ if(loading){
               Log Out
             </Menu.Item>
           </Menu>
+          <Row className="toggle">
+          <Switchs checkedChildren="dhark" unCheckedChildren="light" onChange={(cheked)=>{
+            if(cheked){
+              setTheme("dark")
+            }else{
+              setTheme("light")
+            }
+            }}/>
+        </Row>
         </Sider>
         <Layout className="site-layout" theme={theme}>
           <Header className="site-layout-background header-wrapper" style={{ padding: 0 }} >

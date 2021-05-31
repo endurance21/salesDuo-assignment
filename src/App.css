@@ -114,8 +114,9 @@
 .ant-menu-item-selected a, .ant-menu-item-selected a{
   color:white !important
 }
-.ant-menu-item:hover {
-  color:initial !important
+.ant-menu-item:hover a{
+  /* color:initial !important */
+  /* color:red !important */
 }
 .ant-menu-item-active{
   color:white !important
@@ -149,6 +150,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .vanish-on-mobile{
+    display: none !important
+  }
   .ant-layout-sider{
     position: fixed;
     height: 100vh;
@@ -235,6 +239,21 @@
   background:#000000;
 }
 
+
+
+
+.navbar-tools >ul {
+  bottom: -18px;
+}
+
+
+
+
+.toggle{
+  justify-content: center;
+  margin-top: 5px;
+
+}
 
 
 

@@ -56,20 +56,20 @@ const Profile = () => {
   const menu = (
     <Menu>
       <Menu.Item key="0">
-        <a href="">1st menu item</a>
+        <a href="">View Profile</a>
       </Menu.Item>
       <Menu.Item key="1">
-        <a href="">2nd menu item</a>
+        <a href="">Edit Profile</a>
       </Menu.Item>
       <Menu.Divider />
-      <Menu.Item key="3">3rd menu item</Menu.Item>
+      <Menu.Item key="3">logout</Menu.Item>
     </Menu>
   );
   return (
 
 
     <Row>
-          <Col xs={12} >
+          <Col xs={12} style={{display:"flex",flexDirection:"column",alignItems:"flex-end",marginRight:"3px"}}>
             <Row>Divyanshu</Row>
             <Row className="color-shade">Developer</Row>
           </Col>
@@ -77,7 +77,7 @@ const Profile = () => {
             <PandaIcon style={{fontSize:"2rem"}}></PandaIcon>
           </Col>
             <Col className="center">
-        <Dropdown overlay={menu} trigger={["click"]} >
+        <Dropdown overlay={menu} trigger={["click"]} overlayClassName="navbar-tools" >
             <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
             <DownOutlined />
             </a>
@@ -118,10 +118,10 @@ const Header = () => {
             name="name"
           />
         </Col>
-        <Col sm={6} md={5} lg={4} xl={3} xxl={2} >
+        <Col sm={6} md={5} lg={4} xl={3} xxl={2}>
           <Row>
             <Col className="headerIcon center">
-            <Dropdown overlay={menu} trigger={["click"]} placement="bottomRight" >
+            <Dropdown overlay={menu} trigger={["click"]} placement="bottomRight"  overlayClassName="navbar-tools" >
             <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
             <FiSettings size={20} />
 
@@ -129,7 +129,7 @@ const Header = () => {
         </Dropdown>
             </Col>
             <Col className="headerIcon center">
-            <Dropdown overlay={menu} trigger={["click"]} placement="bottomRight" >
+            <Dropdown overlay={menu} trigger={["click"]} placement="bottomRight"  overlayClassName="navbar-tools">
             <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
             <BiMessageAlt size={20} />
               <Badge dot style={{top: "-10px",right:"0px",verticalAlign:"top",position:"absolute",fontSize:".7rem"}}>
@@ -141,7 +141,7 @@ const Header = () => {
             </Col>
             <Col className="headerIcon center">
 
-            <Dropdown overlay={menu} trigger={["click"]} placement="bottomRight" >
+            <Dropdown overlay={menu} trigger={["click"]} placement="bottomRight"  overlayClassName="navbar-tools">
             <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
             <TiBell size={18}/>
                     <Badge size={"small"} count={3} style={{top: "-16px",right:"-6px",verticalAlign:"top",position:"absolute",fontSize:".7rem"}}>

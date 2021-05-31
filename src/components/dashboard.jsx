@@ -26,11 +26,7 @@ import { Table, ExportTableButton } from "ant-table-extensions";
 import {
   BarChart,
   Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   AreaChart,
   Area,
@@ -63,10 +59,10 @@ const Totalincome = () => {
   const menu = (
     <Menu>
       <Menu.Item key="0">
-        <a href="https://www.antgroup.com">1st menu item</a>
+        <a href="">1st menu item</a>
       </Menu.Item>
       <Menu.Item key="1">
-        <a href="https://www.aliyun.com">2nd menu item</a>
+        <a href="btao ">2nd menu item</a>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="3">3rd menu item</Menu.Item>
@@ -85,7 +81,7 @@ const Totalincome = () => {
               ...
             </a>
           </Dropdown>
-          ,
+
         </Col>
       </Row>
       <Row className="income-dollar badge-text bold">
@@ -242,6 +238,7 @@ const Balance = () => {
             border: ".2px solid rgba(0,0,0,0.1)",
             padding: "5px 2rem",
             borderRadius: "5px",
+            marginTop:"5px"
           }}
         >
           <Row className="color-shade">Earnings</Row>
@@ -260,6 +257,7 @@ const Balance = () => {
             border: ".2px solid  rgba(0,0,0,0.1)",
             padding: "5px 2rem",
             borderRadius: "5px",
+            marginTop:"5px"
           }}
         >
           <Row className="color-shade">Sales Value</Row>
@@ -286,15 +284,45 @@ const Balance = () => {
             bottom: 0,
           }}
         >
+             <defs>
+    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+      <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
+    </linearGradient>
+    <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
+      <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+    </linearGradient>
+    </defs>
           <Tooltip />
-          <Area type="linear" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+          <Area type="linear" dataKey="uv" stroke="#3F51B5" fill="url(#colorUv)"/>
         </AreaChart>
         </ResponsiveContainer>
       </Row>
     </div>
   );
 };
+const Toggler = ()=>{
 
+    return(
+        <div class="toggleWrapper">
+  <input type="checkbox" class="dn" id="dn"/>
+  <label for="dn" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+    <span class="star star--1"></span>
+    <span class="star star--2"></span>
+    <span class="star star--3"></span>
+    <span class="star star--4"></span>
+    <span class="star star--5"></span>
+    <span class="star star--6"></span>
+  </label>
+</div>
+    )
+}
 const NewUser = () => {
   const { countUp } = useCountUp({ end: 90, duration: 4, decimals: 2 });
 
@@ -341,15 +369,39 @@ const NewUser = () => {
       pv: 4300,
       amt: 2100,
     },
+    {
+        name: "Page D",
+        uv: 2780,
+        pv: 3908,
+        amt: 2000,
+      },
+      {
+        name: "Page E",
+        uv: 1890,
+        pv: 4800,
+        amt: 2181,
+      },
+      {
+        name: "Page F",
+        uv: 2390,
+        pv: 3800,
+        amt: 2500,
+      },
+      {
+        name: "Page G",
+        uv: 3490,
+        pv: 4300,
+        amt: 2100,
+      },
   ];
 
   const menu = (
     <Menu>
       <Menu.Item key="0">
-        <a href="https://www.antgroup.com">1st menu item</a>
+        <a href="">1st menu item</a>
       </Menu.Item>
       <Menu.Item key="1">
-        <a href="https://www.aliyun.com">2nd menu item</a>
+        <a href="">2nd menu item</a>
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item key="3">3rd menu item</Menu.Item>
@@ -368,7 +420,7 @@ const NewUser = () => {
               ...
             </a>
           </Dropdown>
-          ,
+
         </Col>
       </Row>
       <Row className="income-dollar badge-text bold">
