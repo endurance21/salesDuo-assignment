@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/salesDuo-assignment/static/css/main.8d0e8671.chunk.css",
+    "main.js": "/salesDuo-assignment/static/js/main.246ff4c7.chunk.js",
+    "main.js.map": "/salesDuo-assignment/static/js/main.246ff4c7.chunk.js.map",
+    "runtime-main.js": "/salesDuo-assignment/static/js/runtime-main.984150ab.js",
+    "runtime-main.js.map": "/salesDuo-assignment/static/js/runtime-main.984150ab.js.map",
+    "static/css/2.c02757eb.chunk.css": "/salesDuo-assignment/static/css/2.c02757eb.chunk.css",
+    "static/js/2.8e67725e.chunk.js": "/salesDuo-assignment/static/js/2.8e67725e.chunk.js",
+    "static/js/2.8e67725e.chunk.js.map": "/salesDuo-assignment/static/js/2.8e67725e.chunk.js.map",
+    "static/js/3.e0957763.chunk.js": "/salesDuo-assignment/static/js/3.e0957763.chunk.js",
+    "static/js/3.e0957763.chunk.js.map": "/salesDuo-assignment/static/js/3.e0957763.chunk.js.map",
+    "index.html": "/salesDuo-assignment/index.html",
+    "static/css/2.c02757eb.chunk.css.map": "/salesDuo-assignment/static/css/2.c02757eb.chunk.css.map",
+    "static/css/main.8d0e8671.chunk.css.map": "/salesDuo-assignment/static/css/main.8d0e8671.chunk.css.map",
+    "static/js/2.8e67725e.chunk.js.LICENSE.txt": "/salesDuo-assignment/static/js/2.8e67725e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.984150ab.js",
+    "static/css/2.c02757eb.chunk.css",
+    "static/js/2.8e67725e.chunk.js",
+    "static/css/main.8d0e8671.chunk.css",
+    "static/js/main.246ff4c7.chunk.js"
+  ]
+}
