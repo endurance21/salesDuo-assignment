@@ -103,21 +103,14 @@ const Balance = () => {
   const [width, setWidth] = useState(0);
   const ref = useRef();
   useEffect(() => {
-      console.log("component did mount")
     let style = getComputedStyle(ref.current);
     setWidth(parseInt(style.width));
     window.addEventListener("resize", () => {
-        console.log("resize calleds")
         let style = getComputedStyle(ref.current);
         setWidth(parseInt(style.width));
     });
     // window.resizeTo(0,0)
     // window.dispatchEvent(new Event('resize'));
-    console.log("hero")
-    window.dispatchEvent(new Event('resize'))
-    return ()=>{
-        console.log("un mounted")
-    }
   }, []);
   const data = [
     {
@@ -189,7 +182,6 @@ const Balance = () => {
       ${Number(value).toFixed(2)}{" "}
     </div>
   );
-console.log("balance",width)
   return (
     <div
       style={{
@@ -197,6 +189,7 @@ console.log("balance",width)
         backgroundColor: "white",
         borderRadius: "3px",
       }}
+      className="box-shadow"
     >
       <Row
         style={{ borderBottom: ".5px solid  rgba(0,0,0,0.1)", padding: "10px" }}
@@ -251,9 +244,9 @@ console.log("balance",width)
         </Col>
       </Row>
       <Row ref={ref} style={{ paddingTop: "80px" }}>
+      <ResponsiveContainer height={130} width="100%">
         <AreaChart
-          width={width>600 ? width-75 : width}
-          height={150}
+
           data={data}
           margin={{
             top: 10,
@@ -265,6 +258,7 @@ console.log("balance",width)
           <Tooltip />
           <Area type="linear" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
         </AreaChart>
+        </ResponsiveContainer>
       </Row>
     </div>
   );
@@ -361,9 +355,9 @@ const NewUser = () => {
       </Row>
 
       <Row className="color-shade" ref={ref}>
+          <ResponsiveContainer height={100} width="100%">
+
         <BarChart
-          width={width ? width : 300}
-          height={100}
           data={data}
           margin={{
             top: 5,
@@ -375,6 +369,7 @@ const NewUser = () => {
           <Tooltip />
           <Bar dataKey="pv" fill="#0693E3" background={{ fill: "#eee" }} />
         </BarChart>
+        </ResponsiveContainer>
       </Row>
     </div>
   );
@@ -541,10 +536,10 @@ const Transactions = () => {
   };
 
   return (
-    <div className="transaction-wrapper" style={{ width: "100%" }}>
-      <Row>
-        <Col xs={20}>
-          <h1>Recent Transactions</h1>
+    <div className="transaction-wrapper box-shadow" style={{ width: "100%" }}>
+      <Row style={{padding:"10px"}}>
+        <Col xs={20} className="recent-transaction">
+            Recent Transactions
         </Col>
         <Col xs={4} style={{ textAlign: "end" }}>
           <ExportTableButton

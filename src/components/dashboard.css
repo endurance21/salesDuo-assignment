@@ -6,3 +6,9 @@
     width: 100%;
     background-color: #fff;
   }
+.recent-transaction{
+    font-size: calc(1vw + .4rem);
+}
+.ant-tabs-nav{
+    padding:10px
+}
