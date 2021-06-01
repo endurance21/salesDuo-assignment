@@ -18,7 +18,7 @@ live here : https://vibrant-kirch-04c981.netlify.app/
 # Preview
 
 
-
+you can un mute the video preview for better experience 😎
 
 
 https://user-images.githubusercontent.com/43696525/120239614-48520480-c27c-11eb-98fd-869f588ff912.mp4
